@@ -152,6 +152,5 @@ sudo docker run -it --rm \
 
 
 
-AKIAQHIRH6GYRJXCZ6MZ
-eVQ93oE4T5shJEHDooEqLX1RbrMs6tgXiGUeEA0D
+
 
