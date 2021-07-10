@@ -1,0 +1,102 @@
+Go to Ropsten and copy the abi of the contract to the UniswapV2Factory Json file.
+
+Open truffle console and run the following commands
+const factoryAbi = require("./build/contracts/UniswapV2Factory.json");
+
+const factory = new web3.eth.Contract(factoryAbi,"0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f");
+
+
+//Get the total pairs present in the Uniswap factory of the Ropsten network
+factory.methods.allPairsLength().call()
+
+
+//Get the first pair
+factory.methods.allPairs(0).call()
+
+
+//Dollar Token already deployed
+0xD97EcD547bb279F79c97C900d29c49412dd71EA1
+const token1Abi = require("./build/contracts/Token1.json").abi;
+const token1 = new web3.eth.Contract(token1Abi,"0xD97EcD547bb279F79c97C900d29c49412dd71EA1");
+
+//Rupee token deployed on Ropsten
+0x55F45f49f23a7d863cBd616C19BDfaE83a2f6b20
+const token2Abi = require("./build/contracts/Token2.json").abi;
+const token2 = new web3.eth.Contract(token2Abi,"0x55F45f49f23a7d863cBd616C19BDfaE83a2f6b20");
+
+
+//Bilira token of Ropsten
+0x2832202e3a7ed9d5c7259eb2aaa5089b4704387f
+
+
+
+
+
+
+// second terminal
+
+let acts = await web3.eth.getAccounts();
+
+
+let token1Address = "0xD97EcD547bb279F79c97C900d29c49412dd71EA1";
+let token2Address = "0x55F45f49f23a7d863cBd616C19BDfaE83a2f6b20";
+//router address of Uniswap
+let routerAddress ="0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D";
+const routerAbi = require("./build/contracts/UniswapV2Router02.json");
+const router = new web3.eth.Contract(routerAbi,routerAddress);
+
+
+const wethAddress = await router1.methods.WETH().call(); 
+
+
+
+//buy some bilira token from ropsten using eth
+const biliraAddress = "0x2832202e3a7ed9d5c7259eb2aaa5089b4704387f";
+
+
+router.methods.swapExactETHForTokens(1,[wethAddress , biliraAddress],acts[0],1725327996).send({from:acts[0],value:web3.utils.toWei('1','ether')});
+
+
+///swap exact eth for bilira
+//swapExactETHForTokens(uint amountOutMin, address[] calldata path, address to, uint deadline)
+router.swapExactETHForTokens(1,[wethAddress , biliraAddress],acts[0],1725327996,{from:acts[0],value:web3.utils.toWei('1','ether')})
+
+//token1 and token2 liquidity
+router.addLiquidity(token1Address,token2Address,40000,30000,10000,10000,acts[0],1725325288)
+
+
+//dollar and eth liquidity
+router.addLiquidity(token1Address,wethAddress,20000,web3.utils.toWei('1','ether'),10000,10000,acts[0],1725325288)
+router.addLiquidityETH(token1Address,10000,5000,10000,acts[0],1725325288,{from:acts[0],value:web3.utils.toWei('1','ether')})
+
+
+//rupee and eth liquidity
+router.addLiquidity(token2Address,wethAddress,20000,web3.utils.toWei('2','ether'),10000,10000,acts[0],1725325288)
+router.addLiquidityETH(token2Address,10000,5000,10000,acts[0],1725325288,{from:acts[0],value:web3.utils.toWei('1','ether')})
+
+//swap dollar for rupee
+await router.swapExactTokensForTokens(10000,3000,[token1Address,token2Address],acts[0],1725327996)
+
+
+
+//will pass ether amount, get dollar estimate
+const est_doll_amount = await router.getAmountsOut(web3.utils.toWei('1','ether'),[wethAddress , token1Address])
+est_doll_amount[1].toString(); //will give the dollar estimate
+
+
+///swap exact eth for dollars
+//swapExactETHForTokens(uint amountOutMin, address[] calldata path, address to, uint deadline)
+router.swapExactETHForTokens(1,[wethAddress , token1Address],acts[0],1725327996,{from:acts[0],value:web3.utils.toWei('1','ether')})
+
+
+
+
+//will pass dollar, how much ether
+const est_eth_amount = await router.getAmountsOut(10000,[token1Address,wethAddress])
+est_eth_amount[1].toString()
+
+
+
+//swap exact dollars for eth
+//swapExactTokensForETH(uint amountIn, uint amountOutMin, address[] calldata path
+router.swapExactTokensForETH(10000,1,[token1Address,wethAddress],acts[0],1725327996)

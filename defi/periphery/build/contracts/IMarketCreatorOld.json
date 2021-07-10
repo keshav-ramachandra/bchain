@@ -1,0 +1,324 @@
+{
+  "contractName": "IMarketCreatorOld",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "getExchange",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"getExchange\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/kesha/Documents/defi/periphery/contracts/interfaces/V1/IMarketCreatorOld.sol\":\"IMarketCreatorOld\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/kesha/Documents/defi/periphery/contracts/interfaces/V1/IMarketCreatorOld.sol\":{\"keccak256\":\"0x18a2e61f037fbf4b6ed3eb78e292200882742b43ff1dab8ed4d5be7b3b6dd80f\",\"urls\":[\"bzz-raw://36897aa62c87cc22163e4301312ba4894e6e3f1ea51433908b9d9beccbe914dc\",\"dweb:/ipfs/QmUGpeGHUU4mgSe3iv9iAkS2JKxFu8qHoJD4DKS2M3b4ZH\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.5.0;\n\ninterface IMarketCreatorOld {\n    function getExchange(address) external view returns (address);\n}\n",
+  "sourcePath": "/home/kesha/Documents/defi/periphery/contracts/interfaces/V1/IMarketCreatorOld.sol",
+  "ast": {
+    "absolutePath": "/home/kesha/Documents/defi/periphery/contracts/interfaces/V1/IMarketCreatorOld.sol",
+    "exportedSymbols": {
+      "IMarketCreatorOld": [
+        5286
+      ]
+    },
+    "id": 5287,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5278,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:15"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 5286,
+        "linearizedBaseContracts": [
+          5286
+        ],
+        "name": "IMarketCreatorOld",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "06f2bf62",
+            "id": 5285,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getExchange",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 5281,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5280,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5285,
+                  "src": "81:7:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5279,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "81:7:15",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "80:9:15"
+            },
+            "returnParameters": {
+              "id": 5284,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5283,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5285,
+                  "src": "113:7:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5282,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "113:7:15",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "112:9:15"
+            },
+            "scope": 5286,
+            "src": "60:62:15",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5287,
+        "src": "26:98:15"
+      }
+    ],
+    "src": "0:125:15"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/home/kesha/Documents/defi/periphery/contracts/interfaces/V1/IMarketCreatorOld.sol",
+      "exportedSymbols": {
+        "IMarketCreatorOld": [
+          5286
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.5",
+            ".0"
+          ]
+        },
+        "id": 5278,
+        "name": "PragmaDirective",
+        "src": "0:24:15"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            5286
+          ],
+          "name": "IMarketCreatorOld",
+          "scope": 5287
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "06f2bf62",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getExchange",
+              "overrides": null,
+              "scope": 5286,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 5285,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 5279,
+                        "name": "ElementaryTypeName",
+                        "src": "81:7:15"
+                      }
+                    ],
+                    "id": 5280,
+                    "name": "VariableDeclaration",
+                    "src": "81:7:15"
+                  }
+                ],
+                "id": 5281,
+                "name": "ParameterList",
+                "src": "80:9:15"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 5285,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 5282,
+                        "name": "ElementaryTypeName",
+                        "src": "113:7:15"
+                      }
+                    ],
+                    "id": 5283,
+                    "name": "VariableDeclaration",
+                    "src": "113:7:15"
+                  }
+                ],
+                "id": 5284,
+                "name": "ParameterList",
+                "src": "112:9:15"
+              }
+            ],
+            "id": 5285,
+            "name": "FunctionDefinition",
+            "src": "60:62:15"
+          }
+        ],
+        "id": 5286,
+        "name": "ContractDefinition",
+        "src": "26:98:15"
+      }
+    ],
+    "id": 5287,
+    "name": "SourceUnit",
+    "src": "0:125:15"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.6+commit.6c089d02.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.1",
+  "updatedAt": "2021-07-05T17:03:05.024Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

@@ -1,0 +1,100 @@
+let acts = await web3.eth.getAccounts();
+
+let factory = await MarketCreator.deployed();
+factory.INIT_CODE_PAIR_HASH()
+
+let token1 = await Token1.deployed();
+let marketManagerAddress='0xfDf408dc71D0Bc9B83F3dDF1723A0c23e6fFF491';
+token1.approve(marketManagerAddress,10000000); //100k D
+
+let token2 = await Token2.deployed();
+token2.approve(marketManagerAddress,10000000); //1 lakh R
+
+
+let weth = await WETH.deployed();
+weth.approve(marketManagerAddress,web3.utils.toWei('100','ether'));
+
+
+//no need of explicit depositing
+weth.deposit({from : acts[0], value: web3.utils.toWei('1','ether')})
+
+
+
+
+
+// market 
+
+let acts = await web3.eth.getAccounts();
+
+let marketManager = await MarketManager.deployed()
+
+let token1Address ='0xAC8CED569a02391Dfb699eba2936F17D0408a2bD';
+let token2Address ='0xd61B8265a7a3099ED05B2Fc0847094CBFF8b3a0B';
+let wethAddress ='0xFBEAE76A988DB2C8e4219615735bB19D82F5dD7F';
+token1 and token2 liquidity
+marketManager.addLiquidity(token1Address,token2Address,20000,30000,10000,10000,acts[0],1725325288)
+
+
+dollar and eth liquidity
+marketManager.addLiquidity(token1Address,wethAddress,20000,web3.utils.toWei('2','ether'),10000,10000,acts[0],1725325288)
+marketManager.addLiquidityETH(token1Address,10000,5000,10000,acts[0],1725325288,{from:acts[0],value:web3.utils.toWei('1','ether')})
+
+
+rupee and eth liquidity
+marketManager.addLiquidity(token2Address,wethAddress,20000,web3.utils.toWei('2','ether'),10000,10000,acts[0],1725325288)
+marketManager.addLiquidityETH(token2Address,10000,5000,10000,acts[0],1725325288,{from:acts[0],value:web3.utils.toWei('1','ether')})
+
+
+
+
+
+
+
+swap dollar for rupee
+await marketManager.swapExactTokensForTokens(10000,3000,[token1Address,token2Address],acts[0],1725327996)
+
+
+
+will pass ether amount, get dollar estimate
+const est_doll_amount = await marketManager.getAmountsOut(web3.utils.toWei('1','ether'),[wethAddress , token1Address])
+est_doll_amount[1].toString()
+
+
+///swap exact eth for dollars
+//swapExactETHForTokens(uint amountOutMin, address[] calldata path, address to, uint deadline)
+marketManager.swapExactETHForTokens(1,[wethAddress , token1Address],acts[0],1725327996,{from:acts[0],value:web3.utils.toWei('1','ether')})
+
+
+
+//will pass dollar, how much ether
+const est_eth_amount = await marketManager.getAmountsOut(10000,[token1Address,wethAddress])
+est_eth_amount[1].toString()
+
+
+
+
+
+
+//swap exact dollars for eth
+//swapExactTokensForETH(uint amountIn, uint amountOutMin, address[] calldata path
+marketManager.swapExactTokensForETH(10000,1,[token1Address,wethAddress],acts[0],1725327996)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+0xbbDf4ba829C25BDb10A1A14c84690947383Ba37F   airnode address
+
+0xe4eA69a4347eEE9843115388988557a9e7ae076a  convenience sol address
+
+
+matic test
+
+airnode  0x8CB8A1F023953c8b04496073A876510fFEE88226
+
+covenience 0x064Ca7D16d011018B4c4D941f25cfed3Df8c0A18
+
+
+
+
+
+sudo docker run -it --rm \
+  --env-file .env \
+  --env COMMAND=remove-with-receipt \
+  --env RECEIPT_FILENAME="cc93c33_aws_us-east-1_weather-example.receipt.json" \
+  -v $(pwd):/airnode/out \
+  api3/airnode-deployer:pre-alpha
